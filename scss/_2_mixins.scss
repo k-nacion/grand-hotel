@@ -1,0 +1,9 @@
+@mixin nav-link-bg {
+  content: '';
+  width: 0;
+  height: .1rem;
+  background-color: $flesh;
+  position: absolute;
+  top: .96rem;
+  transition: width 500ms;
+}

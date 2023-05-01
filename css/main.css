@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 0 0 8rem;
+  padding: 0;
+  font-family: "Montserrat", san-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 2.8rem;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+/*sidebar*/
+.sidebar {
+  width: 8rem;
+  background: #eee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 10;
+}
+.sidebar p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.social-icons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.social-icons-list li {
+  list-style-type: none;
+}
+
+.social-link {
+  font-size: 1.8rem;
+  color: #777;
+  transition: color 250ms ease-in-out;
+}
+.social-link:hover {
+  color: #deaa86;
+}
+
+/*menu-icon*/
+.menu-icon {
+  width: 2.5rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.menu-icon:hover .line {
+  width: 2.5rem;
+}
+
+/*line*/
+.line {
+  height: 0.2rem;
+  background: #222;
+  transition: width 400ms;
+}
+
+.line-2 {
+  transition: opacity 500ms;
+}
+
+.line-1, .line-3 {
+  width: 1.8rem;
+  transition: all 500ms;
+}
+
+/*end of line*/
+/*end of menu-icon*/
+/*end of sidebar*/
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .navigation {
+  left: 8rem;
+}
+.checkbox:checked ~ .sidebar .menu-icon {
+  justify-content: center;
+  align-items: center;
+}
+.checkbox:checked ~ .sidebar .line-1 {
+  transform: rotate(-405deg) translate(-0.5rem, 0.6rem);
+  width: 2.5rem;
+}
+.checkbox:checked ~ .sidebar .line-2 {
+  opacity: 0;
+}
+.checkbox:checked ~ .sidebar .line-3 {
+  transform: rotate(405deg) translate(-0.5rem, -0.6rem);
+  width: 2.5rem;
+}
+
+/*Navigation*/
+.navigation {
+  width: 100%;
+  max-width: 40rem;
+  height: 100vh;
+  position: fixed;
+  left: -32rem;
+  z-index: 9;
+  background: linear-gradient(to top, rgb(34, 32, 41), rgba(34, 32, 41, 0.8)), url("../img/nav-bg.jpeg") center no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  text-align: center;
+  transition: left 500ms;
+}
+
+.navigation-header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 2rem;
+  gap: 3.5rem;
+}
+
+.navigation-heading {
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-family: "Josefin Sans", san-serif;
+  letter-spacing: 0.2rem;
+  color: #deaa86;
+}
+
+.navigation-search-input {
+  width: 30rem;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #deaa86;
+  font-family: "Josefin Sans", san-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  outline: none;
+  border: 0.1rem solid #555;
+  border-radius: 10rem;
+  transition: background-color 250ms;
+}
+.navigation-search-input:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navigation-search {
+  position: relative;
+}
+
+.navigation-search-btn {
+  border: none;
+  background-color: transparent;
+  color: #deaa86;
+  font-size: 1.7rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.navigation-search-btn:focus {
+  outline: none;
+}
+
+.navigation-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  height: 28rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-item {
+  position: relative;
+}
+
+.navigation-link {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #eeeeee;
+  text-transform: uppercase;
+}
+.navigation-link:hover {
+  color: #deaa86;
+}
+.navigation-link:hover::before, .navigation-link:hover::after {
+  width: 3rem;
+}
+.navigation-link::before {
+  content: "";
+  width: 0;
+  height: 0.1rem;
+  background-color: #deaa86;
+  position: absolute;
+  top: 0.96rem;
+  transition: width 500ms;
+  left: -4rem;
+}
+.navigation-link::after {
+  content: "";
+  width: 0;
+  height: 0.1rem;
+  background-color: #deaa86;
+  position: absolute;
+  top: 0.96rem;
+  transition: width 500ms;
+  right: -4rem;
+}
+
+.copyright p {
+  font-size: 1.2rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+/*end of Navigation*/
+/* header */
+.header {
+  height: 100vh;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/header-1.jpeg") center no-repeat;
+  background-size: cover;
+}
+
+.brand {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.hotel-heading {
+  font-family: "Josefin Sans", san-serif;
+  color: #deaa86;
+  letter-spacing: 0.2rem;
+  font-size: 2.7rem;
+  font-weight: normal;
+}
+
+.banner {
+  color: #ddd;
+  height: 65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-heading {
+  font-family: "Josefin Sans", san-serif;
+  font-size: 7rem;
+  opacity: 0;
+  animation: loaded-anim 2s forwards;
+}
+
+.banner-paragraph {
+  font-size: 3.5rem;
+  font-weight: 300;
+  opacity: 0;
+  padding: 1.6rem 0;
+  animation: loaded-anim 1.5s forwards;
+}
+
+.banner-btn {
+  opacity: 0;
+  width: 21rem;
+  padding: 1.2rem 2rem;
+  font-size: 2rem;
+  color: #333;
+  margin-top: 1.6rem;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  animation: loaded-anim 5s forwards;
+  background: linear-gradient(to right, gold, goldenrod);
+  transition: all 150ms;
+}
+.banner-btn:hover {
+  background: linear-gradient(to left, gold, goldenrod);
+}
+.banner-btn:active {
+  transform: translateY(0.2rem);
+}
+
+@keyframes loaded-anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* end of header */
+
+/*# sourceMappingURL=main.css.map */
